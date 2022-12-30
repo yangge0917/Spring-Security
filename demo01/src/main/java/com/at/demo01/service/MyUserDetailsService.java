@@ -25,6 +25,10 @@ public class MyUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //调用UsersMapper方法,根据用户名查询数据库
+
+        System.out.println("第一次提交");
+
+
         QueryWrapper<Users> usersQueryWrapper = new QueryWrapper<>();
         usersQueryWrapper.eq("name",username);
         Users users = usersMapper.selectOne(usersQueryWrapper);
@@ -34,5 +38,6 @@ public class MyUserDetailsService implements UserDetailsService {
         List<GrantedAuthority> auths = AuthorityUtils.commaSeparatedStringToAuthorityList("admins,ROLE_role1");
         //从数据库中查询，得到用户名和密码，返回
         return new User(users.getName(),new BCryptPasswordEncoder().encode(users.getPassword()),auths);
+
     }
 }
