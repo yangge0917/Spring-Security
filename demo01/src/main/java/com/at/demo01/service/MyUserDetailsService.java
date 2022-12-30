@@ -27,6 +27,7 @@ public class MyUserDetailsService implements UserDetailsService {
         //调用UsersMapper方法,根据用户名查询数据库
 
         System.out.println("第一次提交");
+        System.out.println("我提交了新的分支");
 
 
         QueryWrapper<Users> usersQueryWrapper = new QueryWrapper<>();
