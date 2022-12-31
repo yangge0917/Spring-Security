@@ -28,7 +28,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
         System.out.println("第一次提交");
         System.out.println("我提交了新的分支");
-
+        System.out.println("我拉取新的代码");
 
         QueryWrapper<Users> usersQueryWrapper = new QueryWrapper<>();
         usersQueryWrapper.eq("name",username);
